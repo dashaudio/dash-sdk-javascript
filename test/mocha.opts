@@ -1,0 +1,2 @@
+source/**/*.spec.js
+--compilers js:babel-register

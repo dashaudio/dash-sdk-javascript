@@ -1,0 +1,5 @@
+{
+  "endpoints": {
+    "analytics": "http://analytics-api.dashaudio.co"
+  }
+}

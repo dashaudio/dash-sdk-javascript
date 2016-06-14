@@ -1,2 +1,3 @@
-# dash-sdk-javascript
-Dash's JavaScript SDK
+# Dash SDK for JavaScript
+
+Dash's JavaScript SDK.
