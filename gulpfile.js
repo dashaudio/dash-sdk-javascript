@@ -32,7 +32,7 @@ gulp.task('source:sfx', () => {
     .pipe(rollup({
       format: 'iife',
       moduleName: SDK_NAME,
-      plugins: [json(), babel({ presets: ['es2015-rollup'] })]
+      plugins: [json(), babel({ presets: ['es2015-rollup'], babelrc: false })]
     }))
     .pipe(rename({ suffix: '.sfx' }))
     .pipe(gulp.dest('build'));
