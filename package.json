@@ -25,8 +25,14 @@
     "gulp-babel": "^6.1.2",
     "gulp-rename": "^1.2.2",
     "gulp-rollup": "^1.9.0",
+    "isomorphic-fetch": "^2.2.1",
     "mocha": "^2.5.3",
+    "node-fetch": "^1.5.3",
+    "rollup-plugin-alias": "^1.2.0",
     "rollup-plugin-babel": "^2.5.1",
-    "rollup-plugin-json": "^2.0.0"
+    "rollup-plugin-commonjs": "^3.0.0",
+    "rollup-plugin-json": "^2.0.0",
+    "rollup-plugin-node-resolve": "^1.7.0",
+    "whatwg-fetch": "^1.0.0"
   }
 }

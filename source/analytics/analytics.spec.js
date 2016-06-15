@@ -6,4 +6,9 @@ describe('Analytics', () => {
     let analytics = new Analytics();
     expect(analytics.endpoint).to.be.a.string;
   });
+
+  it('should fetch something', (done) => {
+    let analytics = new Analytics();
+    analytics.fetchSomething(done);
+  });
 });
