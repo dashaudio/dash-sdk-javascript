@@ -10,9 +10,7 @@ export class Analytics {
   }
 
   fetchSomething(done) {
-    console.log('fetching something');
     fetch('https://dashaudio.co').then((result) => {
-      console.log(result.body);
       done();
     });
   }
