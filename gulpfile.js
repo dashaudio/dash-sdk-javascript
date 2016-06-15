@@ -7,6 +7,7 @@ var resolve = require('rollup-plugin-node-resolve');
 var commonjs = require('rollup-plugin-commonjs');
 var alias = require('rollup-plugin-alias');
 var mocha = require('gulp-mocha');
+var docco = require('gulp-docco');
 
 var SDK_ENTRY_POINT = 'source/dash.js';
 var SDK_NAME = 'Dash';
@@ -51,6 +52,12 @@ gulp.task('source:sfx', () => {
     .pipe(gulp.dest('build'));
 });
 
+gulp.task('docs', () => {
+  gulp.src('source/**/*.js')
+    .pipe(docco())
+    .pipe(gulp.dest('build/docs'));
+});
+
 gulp.task('test', () => {
   require('babel-register');
   return gulp.src('source/**/*.spec.js')
@@ -61,5 +68,5 @@ gulp.task('watch', ['test'], () => {
   gulp.watch(['source/**/*'], ['test']);
 });
 
-gulp.task('build', ['source:es6', 'source:cjs', 'source:sfx'])
+gulp.task('build', ['source:es6', 'source:cjs', 'source:sfx', 'docs'])
 gulp.task('default', ['build']);
