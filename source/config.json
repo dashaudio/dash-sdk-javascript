@@ -3,8 +3,8 @@
     "host": "dash.eu.auth0.com",
     "client": "HzXlNs8cuC1NO6uPxpOkc6MpsjOQx7MD"
   },
-  "endpoints": {
-    "analytics": "http://analytics-api.dashaudio.co"
+  "domains": {
+    "analytics": "https://analytics-api.dashaudio.co"
   },
   "keys": {
     "storage": {
