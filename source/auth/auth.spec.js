@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { Auth } from './auth';
+import Auth from './auth';
 
 describe('Auth', () => {
   it('should exist', () => {

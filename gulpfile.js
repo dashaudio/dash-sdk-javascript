@@ -7,55 +7,47 @@ var resolve = require('rollup-plugin-node-resolve');
 var commonjs = require('rollup-plugin-commonjs');
 var alias = require('rollup-plugin-alias');
 var mocha = require('gulp-mocha');
-var docco = require('gulp-docco');
+var documentation = require('gulp-documentation');
 
-var SDK_ENTRY_POINT = 'source/dash.js';
-var SDK_NAME = 'Dash';
+var NAME = 'Dash';
+var ROOT = 'source/dash.js';
 
-gulp.task('source:es6', () => {
-  return gulp.src(SDK_ENTRY_POINT)
-    .pipe(rollup({
-      format: 'es6',
-      plugins: [
-        json(),
-        resolve({ browser: true }),
-        commonjs()
-      ]
-    }))
-    .pipe(rename({ suffix: '.es6' }))
-    .pipe(gulp.dest('build'));
-});
-
-gulp.task('source:cjs', () => {
-  return gulp.src(SDK_ENTRY_POINT)
+gulp.task('source:node', () => {
+  return gulp.src(ROOT)
    .pipe(rollup({
       format: 'cjs',
-      plugins: [json()]
+      plugins: [
+        json(),
+        babel({
+          presets: ['es2015-rollup'],
+          babelrc: false
+        })
+      ]
     }))
-    .pipe(rename({ suffix: '.cjs' }))
+    .pipe(rename({ suffix: '.node' }))
     .pipe(gulp.dest('build'));
 });
 
-gulp.task('source:sfx', () => {
-  return gulp.src(SDK_ENTRY_POINT)
+gulp.task('source:browser', () => {
+  return gulp.src(ROOT)
     .pipe(rollup({
       format: 'iife',
-      moduleName: SDK_NAME,
+      moduleName: NAME,
       plugins: [
         json(),
-        babel({ presets: ['es2015-rollup'], babelrc: false }),
-        resolve({ browser: true }),
+        babel({
+          presets: ['es2015-rollup'],
+
+          babelrc: false
+        }),
+        resolve({
+          browser: true
+        }),
         commonjs()
       ]
     }))
-    .pipe(rename({ suffix: '.sfx' }))
+    .pipe(rename({ suffix: '.browser' }))
     .pipe(gulp.dest('build'));
-});
-
-gulp.task('docs', () => {
-  gulp.src('source/**/*.js')
-    .pipe(docco())
-    .pipe(gulp.dest('build/docs'));
 });
 
 gulp.task('test', () => {
@@ -68,5 +60,5 @@ gulp.task('watch', ['test'], () => {
   gulp.watch(['source/**/*'], ['test']);
 });
 
-gulp.task('build', ['source:es6', 'source:cjs', 'source:sfx', 'docs'])
+gulp.task('build', ['source:node', 'source:browser'])
 gulp.task('default', ['build']);

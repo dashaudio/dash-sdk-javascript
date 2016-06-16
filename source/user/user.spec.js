@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { User } from './user';
+import User from './user';
 
 describe('User', () => {
   it('should have a name', () => {

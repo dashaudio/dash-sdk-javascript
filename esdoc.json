@@ -1,0 +1,8 @@
+{
+  "source": "./source",
+  "destination": "./build/esdoc",
+  "test": {
+    "type": "mocha",
+    "source": "./source"
+  }
+}

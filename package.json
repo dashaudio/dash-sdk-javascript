@@ -6,7 +6,8 @@
   "scripts": {
     "test": "gulp test",
     "start": "gulp watch",
-    "build": "gulp build"
+    "build": "gulp build",
+    "docs": "esdoc -c esdoc.json"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
     "babel-preset-es2015-rollup": "^1.1.1",
     "babel-register": "^6.9.0",
     "chai": "^3.5.0",
+    "esdoc": "^0.4.7",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-docco": "0.0.4",

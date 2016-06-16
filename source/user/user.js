@@ -1,11 +1,12 @@
-// # User
+/**
+* User class
+*/
+export default class User {
 
-// The user object allows fetching and saving of user settings and properties.
-export class User {
-
-  // ## Properties
-
-  // Get the user's name, if we have it
+  /**
+  * Get user's name
+  * @returns {String} name
+  */
   name() {
     return 'my name';
   }

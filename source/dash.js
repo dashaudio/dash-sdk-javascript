@@ -1,9 +1,4 @@
-// # Dash
+import Analytic from './analytic/analytic';
+import User from './user/user';
 
-// A Dash service [user](./user/user.html)
-export { User } from './user/user';
-
-//
-export { Analytics } from './analytics/analytics';
-export { Auth } from './auth/auth';
-export { Content } from './content/content';
+export default { Analytic, User };

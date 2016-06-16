@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import PlaysEndpoint from './plays';
+import { PlaysEndpoint } from './plays';
 
 describe('Analytics Plays Endpoint', () => {
   it('should return fetch URL', () => {
