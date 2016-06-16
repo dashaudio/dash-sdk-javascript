@@ -1,41 +1,40 @@
-import { PlaysEndpoint } from '../endpoints/analytic/plays';
-import fetch from 'isomorphic-fetch';
+import { PlaysAnalyticEndpoint } from '../endpoint/analytic/plays';
+import isofetch from 'isomorphic-fetch';
 
 /**
  * Class for plays
  * @example
  * let plays = new dash.PlaysAnalytic();
  * plays.fetchAll((result) => console.log(result));
-
-  */
+ */
 export class PlaysAnalytic {
 
   /**
    * Create a new plays analytic
-   * @param {Object} deps optional dependencies
+   * @param {Function} [fetch] Override fetch
+   * @param {PlaysAnalyticEndpoint} [endpoint] Override endpoint
    */
-  constructor(deps) {
-    this.fetch = (deps && deps.fetch) || fetch;
-    this.endpoint = (deps && deps.endpoint) || new PlaysEndpoint();
+  constructor(fetch, endpoint) {
+    this.fetch = fetch || isofetch;
+    this.endpoint = endpoint || new PlaysAnalyticEndpoint();
   }
 
   /**
   * Fetch all play analytics
-  * @param {Function} done callback function
   * @returns {Promise} a promise which resolves when done
   */
-  fetchAll(done) {
-      this.fetch(this.endpoint.fetch()).then((result) => {
-        done(result);
-      });
-      // Do some more work on this. Should just return a promise!
-  }
+  refresh() {
+    let start = new Date();
+    let end = new Date();
+    let client = 'politiken';
 
-  /**
-  * Some static function
-  * @static
-  */
-  static foo() {
-    // ...
+    return this.fetch(this.endpoint.collection(start, end, client))
+      .then((res) => res.json())
+      .then((json) => json.buckets.map((bucket) => {
+        return {
+          timestamp: bucket.key,
+          value: bucket.doc_count
+        }
+      }));
   }
 }
