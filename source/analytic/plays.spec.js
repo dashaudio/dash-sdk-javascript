@@ -2,6 +2,7 @@ import chai from 'chai';
 import promised from 'chai-as-promised';
 import sinon from 'sinon';
 import { PlaysAnalytic } from './plays';
+import fixtures from './plays.spec.fixtures';
 
 chai.should();
 chai.use(promised);
@@ -10,29 +11,13 @@ chai.use(promised);
 * @test {PlaysAnalytic#refresh}
 */
 describe('Plays Analytic', () => {
-  var fetch;
+  let fetch;
+  let json = JSON.stringify(fixtures.default);
 
   beforeEach(() => {
-    let response = `
-      {
-        "buckets": [
-          {
-            "key_as_string": "2016-06-16",
-            "key": 1466035200000,
-            "doc_count": 123
-          }
-        ]
-      }
-    `;
-
-    var res = new global.Response(response, {
-      status: 200,
-      headers: {
-        'Content-type': 'application/json'
-      }
-    });
-
-    fetch = () => Promise.resolve(res);
+    fetch = () => Promise.resolve(new Response(json, {
+      status: 200, headers: { 'Content-type': 'application/json' }
+    }));
   });
 
   it('should refresh plays data', () => {

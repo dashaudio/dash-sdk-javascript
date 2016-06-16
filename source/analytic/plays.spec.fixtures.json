@@ -1,0 +1,11 @@
+{
+  "default": {
+    "buckets": [
+      {
+        "key_as_string": "2016-06-16",
+        "key": 1466035200000,
+        "doc_count": 123
+      }
+    ]
+  }
+}
