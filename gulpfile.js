@@ -7,7 +7,6 @@ var resolve = require('rollup-plugin-node-resolve');
 var commonjs = require('rollup-plugin-commonjs');
 var alias = require('rollup-plugin-alias');
 var mocha = require('gulp-mocha');
-var documentation = require('gulp-documentation');
 
 var NAME = 'Dash';
 var ROOT = 'source/dash.js';
