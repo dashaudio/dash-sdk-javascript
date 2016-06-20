@@ -1,2 +1,15 @@
+engines:
+  eslint:
+    enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - javascript
+
+ratings:
+  paths:
+  - source/**/*.js
+
 exclude_paths:
   - source/**/*.spec.js
