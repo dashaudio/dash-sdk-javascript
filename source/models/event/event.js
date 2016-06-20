@@ -13,7 +13,7 @@ export class Event {
   agent() {
     return {
       '@type': 'Person',
-      '@context': 'http://schema.org',
+      '@context': 'https://schema.org',
       '@id': 'http://dashaudio.co/Person/12345',
       'alternateName': '123e4567-e89b-12d3-a456-426655440000'
     };
@@ -28,7 +28,7 @@ export class Event {
   instrument() {
     return {
       '@type': 'MobileApplication',
-      '@context': 'http://schema.org',
+      '@context': 'https://schema.org',
       '@id': 'http://dashaudio.co/MobileApplication/2A0F6DB3-6819-4B69-AF98-33A6472C6F53',
       'operatingSystem': 'iOS 9.0',
       'softwareVersion': '2.1',

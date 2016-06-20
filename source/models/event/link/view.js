@@ -7,7 +7,7 @@ import { EventStatus } from '../status';
  */
 export class LinkViewEvent extends Event {
   /**
-   * Create a new Link View Event for a given URL
+   * Create a new Link View event for a given URL
    * @param  {String} url The content's URL
    */
   constructor(url) {
@@ -22,15 +22,15 @@ export class LinkViewEvent extends Event {
    */
   build() {
     return {
-      "@type": "ViewAction",
-      "@context": "http://schema.org",
+      '@type': 'ViewAction',
+      '@context': 'https://schema.org',
 
       actionStatus: EventStatus.Completed,
-      agent: super.agent(),
-      instrument: super.instrument(),
-      location: super.location(),
+      agent: this.agent(),
+      instrument: this.instrument(),
+      location: this.location(),
       object: this.url,
-      startTime: super.now()
+      startTime: this.now()
     }
   }
 }

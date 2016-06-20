@@ -15,18 +15,18 @@ export class PlaylistDeleteEvent extends PlaylistEvent {
   build() {
     return {
       "@type": "DeleteAction",
-      "@context": "http://schema.org",
+      "@context": "https://schema.org",
 
       actionStatus: EventStatus.Completed,
-      agent: super.agent(),
-      instrument: super.instrument(),
-      location: super.location(),
+      agent: this.agent(),
+      instrument: this.instrument(),
+      location: this.location(),
       object: {
         '@type': 'MusicPlaylist',
         '@context': 'https://schema.org',
         '@id': this.playlist.id
       },
-      startTime: super.now()
+      startTime: this.now()
     }
   }
 }

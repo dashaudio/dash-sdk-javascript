@@ -14,15 +14,15 @@ export class TrackRemoveEvent extends TrackEvent {
   build() {
     return {
       "@type": "DeleteAction",
-      "@context": "http://schema.org",
+      "@context": "https://schema.org",
 
       actionStatus: EventStatus.Completed,
-      agent: super.agent(),
-      instrument: super.instrument(),
-      location: super.location(),
+      agent: this.agent(),
+      instrument: this.instrument(),
+      location: this.location(),
       object: super.track(),
       targetCollection: super.playlist(),
-      startTime: super.now()
+      startTime: this.now()
     }
   }
 }

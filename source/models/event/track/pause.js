@@ -14,14 +14,14 @@ export class TrackPauseEvent extends TrackPositionEvent {
   build() {
     return {
       "@type": "SuspendAction",
-      "@context": "http://schema.org",
+      "@context": "https://schema.org",
 
       actionStatus: EventStatus.Completed,
-      agent: super.agent(),
-      instrument: super.instrument(),
-      location: super.location(),
+      agent: this.agent(),
+      instrument: this.instrument(),
+      location: this.location(),
       object: super.track(),
-      startTime: super.now(),
+      startTime: this.now(),
       target: super.target()
     }
   }

@@ -14,13 +14,13 @@ export class AppInstallEvent extends Event {
   build() {
     return {
       "@type": "InstallAction",
-      "@context": "http://schema.org",
+      "@context": "https://schema.org",
 
       actionStatus: EventStatus.Completed,
-      agent: super.agent(),
-      object: super.instrument(),
-      location: super.location(),
-      startTime: super.now()
+      agent: this.agent(),
+      object: this.instrument(),
+      location: this.location(),
+      startTime: this.now()
     }
   }
 }

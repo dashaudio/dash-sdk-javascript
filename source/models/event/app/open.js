@@ -15,14 +15,14 @@ export class AppOpenEvent extends Event {
   build() {
     return {
       "@type": "ActivateAction",
-      "@context": "http://schema.org",
+      "@context": "https://schema.org",
 
       actionStatus: EventStatus.Completed,
-      agent: super.agent(),
-      instrument: super.instrument(),
-      location: super.location(),
-      object: super.instrument(),
-      startTime: super.now()
+      agent: this.agent(),
+      instrument: this.instrument(),
+      location: this.location(),
+      object: this.instrument(),
+      startTime: this.now()
     }
   }
 }
