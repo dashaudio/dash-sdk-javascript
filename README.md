@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.com/dashaudio/dash-sdk-javascript.svg?token=j6b8xzvQsPodsJQUxCGM&branch=master)](https://travis-ci.com/dashaudio/dash-sdk-javascript)
 [![Test Coverage](https://codeclimate.com/github/dashaudio/dash-sdk-javascript/badges/coverage.svg)](https://codeclimate.com/github/dashaudio/dash-sdk-javascript/coverage)
 [![Documentation](http://documentation.dashaudio.co/sdk/javascript/badge.svg)](http://documentation.dashaudio.co/sdk/javascript/)
+[![Code Climate](https://codeclimate.com/github/dashaudio/dash-sdk-javascript/badges/gpa.svg)](https://codeclimate.com/github/dashaudio/dash-sdk-javascript)
 
 # Quick Start
 
