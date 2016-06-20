@@ -8,6 +8,8 @@ var commonjs = require('rollup-plugin-commonjs');
 var alias = require('rollup-plugin-alias');
 var mocha = require('gulp-mocha');
 
+require('babel-register');
+
 var NAME = 'Dash';
 var ROOT = 'source/dash.js';
 
@@ -50,7 +52,6 @@ gulp.task('source:browser', () => {
 });
 
 gulp.task('test', () => {
-  require('babel-register');
   return gulp.src('source/**/*.spec.js')
     .pipe(mocha());
 });
