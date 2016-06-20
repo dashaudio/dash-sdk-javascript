@@ -8,7 +8,7 @@
     "start": "gulp watch",
     "build": "gulp build",
     "docs": "esdoc -c esdoc.json",
-    "coverage": "istanbul cover _mocha"
+    "coverage": "istanbul cover _mocha && codeclimate-test-reporter < build/coverage/lcov.info"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
     "babel-register": "^6.9.0",
     "chai": "^3.5.0",
     "chai-as-promised": "^5.3.0",
+    "codeclimate-test-reporter": "^0.3.3",
     "esdoc": "^0.4.7",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
