@@ -1,6 +1,8 @@
 engines:
   eslint:
     enabled: true
+    config:
+      esversion: 6
   duplication:
     enabled: true
     config:
