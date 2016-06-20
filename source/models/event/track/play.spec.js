@@ -1,44 +1,44 @@
 import chai from 'chai';
-import { TrackPauseEvent } from './pause';
+import { TrackPlayEvent } from './play';
 
 /**
- * @test {TrackPauseEvent}
+ * @test {TrackPlayEvent}
  */
-describe('Track Pause Event', () => {
+describe('Track Play Event', () => {
   it('should exist', () => {
-    TrackPauseEvent.should.not.be.undefined;
+    TrackPlayEvent.should.not.be.undefined;
   });
 
   /**
-   * @test {TrackPauseEvent#build}
+   * @test {TrackPlayEvent#build}
    */
   it('should build its dictionary', () => {
-    let event = new TrackPauseEvent({ id: 12345 }, 123);
+    let event = new TrackPlayEvent({ id: 12345 }, 123);
     let type = event.build()['@type'];
-    type.should.equal('SuspendAction');
+    type.should.equal('ResumeAction');
   });
 
   /**
-   * @test {TrackPauseEvent#constructor}
+   * @test {TrackPlayEvent#constructor}
    */
   it('should fail to construct without a Track', () => {
-    (() => new TrackPauseEvent()).should.throw(Error);
+    (() => new TrackPlayEvent()).should.throw(Error);
   });
 
   /**
-   * @test {TrackPauseEvent#build}
+   * @test {TrackPlayEvent#build}
    */
   it('should contain the track ID in its dictionary', () => {
-    let event = new TrackPauseEvent({ id: 12345 }, 123);
+    let event = new TrackPlayEvent({ id: 12345 }, 123);
     let dictionary = event.build();
     dictionary.object['@id'].should.equal(12345);
   });
 
   /**
-   * @test {TrackPauseEvent#build}
+   * @test {TrackPlayEvent#build}
    */
   it('should contain the track position in its dictionary', () => {
-    let event = new TrackPauseEvent({ id: 12345 }, 123);
+    let event = new TrackPlayEvent({ id: 12345 }, 123);
     let dictionary = event.build();
     dictionary.target.should.contain(123);
   });

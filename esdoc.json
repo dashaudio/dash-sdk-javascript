@@ -1,6 +1,7 @@
 {
   "source": "./source",
   "destination": "./build/documentation",
+  "coverage": true,
   "test": {
     "type": "mocha",
     "source": "./source"

@@ -1,5 +1,8 @@
-// TODO: Factor out some stuff here into utils (eg. to work out what app we are running as).
-
+/**
+ * Base class for all analytic events. Our events model user actions within client apps, and are
+ * based on enteties described by [schema.org](https://schema.org).
+ * @todo Factor out some stuff here into utils, eg. to work out what app we are running as
+ */
 export class Event {
   /**
    * Generate a description of the current user, confirming to schema.org's

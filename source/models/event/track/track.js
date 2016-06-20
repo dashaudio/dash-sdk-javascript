@@ -8,10 +8,10 @@ import { EventStatus } from '../status';
 export class TrackEvent extends Event {
   /**
    * Create a new Track event, with the given track.
-   * @param  {Track} track The track that was acted on
+   * @param {Track} track The track that was acted on
    */
   constructor(track) {
-    if (!track) throw new Error('TrackEvent constructor requires a playlist parameter');
+    if (!track) throw new Error('TrackEvent constructor requires a track parameter');
     super();
     this.track = track;
   }
@@ -33,6 +33,18 @@ export class TrackEvent extends Event {
       '@type': 'AudioObject',
       '@context': 'https://schema.org',
       '@id': this.track.id
+    };
+  }
+
+  /**
+   * Generate a playlist description
+   * @return {Object} The 'MusicPlaylist' schema
+   */
+  playlist() {
+    return {
+      '@type': 'MusicPlaylist',
+      '@context': 'https://schema.org',
+      '@id': this.track.playlist.id
     };
   }
 }

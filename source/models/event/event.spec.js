@@ -3,6 +3,7 @@ import { Event } from './event';
 
 /**
  * @test {Event}
+ * @todo Complete tests
  */
 describe('Event', () => {
   it('should exist', () => {

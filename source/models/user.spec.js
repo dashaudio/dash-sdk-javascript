@@ -5,9 +5,11 @@ import { User } from './user';
 
 chai.should();
 
+/**
+ * @test {User}
+ */
 describe('User', () => {
   it('should exist', () => {
-    let user = new User();
-    (new User()).should.be.an.instanceof(User);
+    User.should.not.be.undefined;
   });
 });
