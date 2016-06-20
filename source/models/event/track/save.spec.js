@@ -27,7 +27,7 @@ describe('Track Save Event', () => {
   });
 
   /**
-   * @test {TrackPlayEvent#build}
+   * @test {TrackSaveEvent#build}
    */
   it('should contain the track ID in its dictionary', () => {
     let track = { id: 12345, playlist: { id: 67890 } };
@@ -37,7 +37,7 @@ describe('Track Save Event', () => {
   });
 
   /**
-   * @test {TrackPlayEvent#build}
+   * @test {TrackSaveEvent#build}
    */
   it('should contain the playlist ID in its dictionary', () => {
     let track = { id: 12345, playlist: { id: 67890 } };

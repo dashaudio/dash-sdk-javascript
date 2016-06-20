@@ -27,7 +27,7 @@ describe('Track Share Event', () => {
   });
 
   /**
-   * @test {TrackPlayEvent#build}
+   * @test {TrackShareEvent#build}
    */
   it('should contain the track ID in its dictionary', () => {
     let track = { id: 12345, playlist: { id: 67890 } };
