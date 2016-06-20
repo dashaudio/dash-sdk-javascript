@@ -8,7 +8,7 @@ chai.should();
 chai.use(promised);
 
 /**
-* @test {PlaysAnalytic#refresh}
+* @test {PlaysAnalytic}
 */
 describe('Plays Analytic', () => {
   let fetch;
@@ -20,12 +20,18 @@ describe('Plays Analytic', () => {
     }));
   });
 
+  /**
+   * @test {PlaysAnalytic#refresh}
+   */
   it('should refresh plays data', () => {
     let plays = new PlaysAnalytic(fetch);
 
     return plays.refresh().should.eventually.be.fulfilled;
   });
 
+  /**
+   * @test {PlaysAnalytic#refresh}
+   */
   it('should format the data response', () => {
     let plays = new PlaysAnalytic(fetch);
 

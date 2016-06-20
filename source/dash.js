@@ -1,3 +1,7 @@
+/**
+ * Export all modules to create the SDK
+ */
+
 import Analytic from './analytic/analytic';
 
 import { User } from './models/user';
