@@ -5,6 +5,7 @@ export class Event {
    * Generate a description of the current user, confirming to schema.org's
    * [Person](https://schema.org/Person).
    * TODO: Fill in the actual person
+   * @return {Object} The 'Person' schema
    */
   agent() {
     return {
@@ -18,7 +19,8 @@ export class Event {
   /**
    * Generate a description of the currently running app, conforming to schema.org's
    * [SoftwareApplication](https://schema.org/SoftwareApplication).
-   * * TODO: Fill in the actual application
+   * TODO: Fill in the actual application
+   * @return {Object} The 'SoftwareApplication' schema
    */
   instrument() {
     return {
@@ -34,6 +36,7 @@ export class Event {
   /**
    * Generate a location field for the current app instance. Currently just an IP address.
    * TODO: Work out how to get IP, or what sentinel value to use to defer to server
+   * @return {String} The IP address string
    */
   location() {
     return '86.123.785.197';
@@ -41,6 +44,7 @@ export class Event {
 
   /**
    * Current time in ISO 8601 format.
+   * @return {String} The date ISO string
    */
   now() {
     return (new Date()).toISOString();

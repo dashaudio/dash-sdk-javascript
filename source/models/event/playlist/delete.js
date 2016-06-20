@@ -1,4 +1,4 @@
-import { Event } from '../event';
+import { PlaylistEvent } from './playlist';
 import { EventStatus } from '../status';
 
 /**
@@ -7,17 +7,7 @@ import { EventStatus } from '../status';
  * of its objects.*.
  * @see {@link PlaylistCreateEvent}
  */
-export class PlaylistDeleteEvent extends Event {
-  /**
-   * Create a new Playlist Delete event, with the given playlist.
-   * @param  {Playlist} playlist The playlist that was deleted
-   */
-  constructor(playlist) {
-    if (!playlist) throw new Error('PlaylistDeleteEvent constructor requires a playlist parameter');
-    super();
-    this.playlist = playlist;
-  }
-
+export class PlaylistDeleteEvent extends PlaylistEvent {
   /**
    * Build a dictionary for this event.
    * @return {Object} The dictionary
