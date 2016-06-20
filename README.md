@@ -1,7 +1,7 @@
 # Dash SDK for JavaScript
 
 [![Build Status](https://travis-ci.com/dashaudio/dash-sdk-javascript.svg?token=j6b8xzvQsPodsJQUxCGM&branch=master)](https://travis-ci.com/dashaudio/dash-sdk-javascript)
-[![Tests Status](https://coveralls.io/repos/github/dashaudio/dash-sdk-javascript/badge.svg?branch=master)](https://coveralls.io/github/dashaudio/dash-sdk-javascript?branch=master)
+[![Test Coverage](https://codeclimate.com/github/dashaudio/dash-sdk-javascript/badges/coverage.svg)](https://codeclimate.com/github/dashaudio/dash-sdk-javascript/coverage)
 [![Documentation](http://documentation.dashaudio.co/sdk/javascript/badge.svg)](http://documentation.dashaudio.co/sdk/javascript/)
 
 # Quick Start
