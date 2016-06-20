@@ -19,14 +19,14 @@ describe('Track Download Event', () => {
   });
 
   /**
-   * @test {PlaylistCreateEvent#constructor}
+   * @test {TrackDownloadEvent#constructor}
    */
   it('should fail to construct without a Track', () => {
     (() => new TrackDownloadEvent()).should.throw(Error);
   });
 
   /**
-   * @test {PlaylistDeleteEvent#build}
+   * @test {TrackDownloadEvent#build}
    */
   it('should contain the track ID in its dictionary', () => {
     let event = new TrackDownloadEvent({ id: 12345 });
