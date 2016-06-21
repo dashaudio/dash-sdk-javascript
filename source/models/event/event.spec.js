@@ -98,4 +98,12 @@ describe('Event', () => {
 
     event.time.should.equal(time);
   });
+
+  /**
+   * @test {Event#build}
+   */
+  it('should fail to build if not overriden', () => {
+    let event = new Event();
+    (() => event.build()).should.throw;
+  });
 });
