@@ -29,15 +29,15 @@ export class ChannelSubscribeEvent extends Event {
       '@context': 'https://schema.org',
 
       actionStatus: EventStatus.Completed,
-      agent: this.agent(),
-      instrument: this.instrument(),
-      location: this.location(),
+      agent: this.person,
+      instrument: this.application,
+      location: this.location,
       object: {
         '@type': 'Channel',
         '@context': 'https://dashaudio.co',
         '@id': this.channel.id
       },
-      startTime: this.now()
+      startTime: this.time
     }
   }
 }

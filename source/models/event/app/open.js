@@ -1,5 +1,6 @@
 import { Event } from '../event';
 import { EventStatus } from '../status';
+import { Person } from '../../person';
 
 /**
  * App Open denotes that a client app was opened by a user. Uses schema.org's
@@ -17,12 +18,12 @@ export class AppOpenEvent extends Event {
       "@type": "ActivateAction",
       "@context": "https://schema.org",
 
-      actionStatus: EventStatus.Completed,
-      agent: this.agent(),
-      instrument: this.instrument(),
-      location: this.location(),
-      object: this.instrument(),
-      startTime: this.now()
+      actionStatus: this.status,
+      agent: this.person,
+      instrument: this.application,
+      location: this.location,
+      object: this.application,
+      startTime: this.time
     }
   }
 }

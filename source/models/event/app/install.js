@@ -17,10 +17,10 @@ export class AppInstallEvent extends Event {
       "@context": "https://schema.org",
 
       actionStatus: EventStatus.Completed,
-      agent: this.agent(),
-      object: this.instrument(),
-      location: this.location(),
-      startTime: this.now()
+      agent: this.person,
+      object: this.application,
+      location: this.location,
+      startTime: this.time
     }
   }
 }

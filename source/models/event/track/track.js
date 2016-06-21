@@ -10,9 +10,9 @@ export class TrackEvent extends Event {
    * Create a new Track event, with the given track.
    * @param {Track} track The track that was acted on
    */
-  constructor(track) {
+  constructor(track, overrides) {
     if (!track) throw new Error('TrackEvent constructor requires a track parameter');
-    super();
+    super(overrides);
     this.track = track;
   }
 

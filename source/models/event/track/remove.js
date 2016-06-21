@@ -17,12 +17,12 @@ export class TrackRemoveEvent extends TrackEvent {
       "@context": "https://schema.org",
 
       actionStatus: EventStatus.Completed,
-      agent: this.agent(),
-      instrument: this.instrument(),
-      location: this.location(),
+      agent: this.person,
+      instrument: this.application,
+      location: this.location,
       object: super.track(),
       targetCollection: super.playlist(),
-      startTime: this.now()
+      startTime: this.time
     }
   }
 }

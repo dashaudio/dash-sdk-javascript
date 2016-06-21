@@ -1,55 +1,26 @@
+import { EventStatus } from './status';
+import { Person } from '../person';
+import { Application } from '../application';
+
 /**
  * Base class for all analytic events. Our events model user actions within client apps, and are
  * based on enteties described by [schema.org](https://schema.org).
  * @todo Factor out some stuff here into utils, eg. to work out what app we are running as
+ * @abstract
  */
 export class Event {
   /**
-   * Generate a description of the current user, confirming to schema.org's
-   * [Person](https://schema.org/Person).
-   * TODO: Fill in the actual person
-   * @return {Object} The 'Person' schema
+   * Create a new event, with the specified parameter overrides
+   * @param {Object} [overrides] Optional override parameters object
+   * @example let event = TrackPlayEvent({ status: EventStatus.Failed });
+   * @todo Type validation of these overrides
+   * @abstract
    */
-  agent() {
-    return {
-      '@type': 'Person',
-      '@context': 'https://schema.org',
-      '@id': 'http://dashaudio.co/Person/12345',
-      'alternateName': '123e4567-e89b-12d3-a456-426655440000'
-    };
-  }
-
-  /**
-   * Generate a description of the currently running app, conforming to schema.org's
-   * [SoftwareApplication](https://schema.org/SoftwareApplication).
-   * TODO: Fill in the actual application
-   * @return {Object} The 'SoftwareApplication' schema
-   */
-  instrument() {
-    return {
-      '@type': 'MobileApplication',
-      '@context': 'https://schema.org',
-      '@id': 'http://dashaudio.co/MobileApplication/2A0F6DB3-6819-4B69-AF98-33A6472C6F53',
-      'operatingSystem': 'iOS 9.0',
-      'softwareVersion': '2.1',
-      'availableOnDevice': 'iPhone'
-    };
-  }
-
-  /**
-   * Generate a location field for the current app instance. Currently just an IP address.
-   * TODO: Work out how to get IP, or what sentinel value to use to defer to server
-   * @return {String} The IP address string
-   */
-  location() {
-    return '86.123.785.197';
-  }
-
-  /**
-   * Current time in ISO 8601 format.
-   * @return {String} The date ISO string
-   */
-  now() {
-    return (new Date()).toISOString();
+  constructor(overrides = {}) {
+    this.status = overrides.status || EventStatus.Completed;
+    this.application = overrides.application || Application.current();
+    this.person = overrides.person || Person.current();
+    this.location = overrides.location || ''; // TODO: Implement a Location.current()?
+    this.time = overrides.time || (new Date()).toISOString();
   }
 }

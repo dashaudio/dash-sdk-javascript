@@ -18,11 +18,11 @@ export class AppCloseEvent extends Event {
       "@context": "https://schema.org",
 
       actionStatus: EventStatus.Completed,
-      agent: this.agent(),
-      instrument: this.instrument(),
-      location: this.location(),
-      object: this.instrument(),
-      startTime: this.now()
+      agent: this.person,
+      instrument: this.application,
+      location: this.location,
+      object: this.application,
+      startTime: this.time
     }
   }
 }

@@ -18,10 +18,10 @@ export class UserLoginEvent extends Event {
       "@context": "https://schema.org",
 
       actionStatus: EventStatus.Completed,
-      agent: this.agent(),
-      instrument: this.instrument(),
-      location: this.location(),
-      startTime: this.now()
+      agent: this.person,
+      instrument: this.application,
+      location: this.location,
+      startTime: this.time
     }
   }
 }

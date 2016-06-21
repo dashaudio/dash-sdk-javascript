@@ -4,7 +4,7 @@
 
 import Analytic from './analytic/analytic';
 
-import { User } from './models/user';
-import { UserStore } from './stores/user';
+import { Person } from './models/person';
+import { PersonStore } from './stores/person';
 
-export default { Analytic, User, UserStore };
+export default { Analytic, Person, PersonStore };

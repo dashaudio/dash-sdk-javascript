@@ -12,9 +12,9 @@ export class PlaylistEvent extends Event {
    * Create a new Playlist event, with the given playlist.
    * @param  {Playlist} playlist The playlist that was acted on
    */
-  constructor(playlist) {
+  constructor(playlist, overrides) {
     if (!playlist) throw new Error('PlaylistEvent constructor requires a playlist parameter');
-    super();
+    super(overrides);
     this.playlist = playlist;
   }
 
