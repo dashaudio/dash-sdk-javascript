@@ -14,12 +14,19 @@ of the SDK automatically send these events (for example, during audio playback),
 exposed here to allow it to be used easily with other systems. The event classes provided are
 designed to be used with our logging system, as follows:
 
-    // Create and send a new play event
+    // Create a basic event
+    let event = new AppOpenEvent();
 
-    let event = TrackPlayEvent({ id: 12345 });
-    let store = new LogStore();
+    // Override a parameter
+    let event = new AppOpenEvent({ location: '40.748441,-73.985664' })
 
-    store.save(event).then(() => console.log('Saved the play event!'));
+    // Save the event to our logging backend
+    event = new AppOpenEvent();
+    store = new LogStore();
+    store.save(event.build()).then(() => { ... });
+
+See the [Event](./class/source/models/event/event.js~Event.html) base class and its derived classes
+for more events.
 
 ## Users
 
