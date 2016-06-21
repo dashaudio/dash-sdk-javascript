@@ -9,6 +9,7 @@ export class TrackEvent extends Event {
   /**
    * Create a new Track event, with the given track.
    * @param {Track} track The track that was acted on
+   * @todo Add a full Track omodel object and use that here
    */
   constructor(track, overrides) {
     if (!track) throw new Error('TrackEvent constructor requires a track parameter');

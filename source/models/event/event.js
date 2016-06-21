@@ -23,4 +23,12 @@ export class Event {
     this.location = overrides.location || ''; // TODO: Implement a Location.current()?
     this.time = overrides.time || (new Date()).toISOString();
   }
+
+  /**
+   * Build a dictionary for this event.
+   * @abstract
+   */
+  build() {
+    throw new Error('Event build() method must be overridden.');
+  }
 }

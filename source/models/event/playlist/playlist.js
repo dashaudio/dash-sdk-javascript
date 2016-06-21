@@ -6,11 +6,12 @@ import { EventStatus } from '../status';
  * @abstract
  * @see {@link PlaylistCreateEvent}
  * @see {@link PlaylistDeleteEvent}
+ * @todo Add a full Playlist model object and use that here
  */
 export class PlaylistEvent extends Event {
   /**
    * Create a new Playlist event, with the given playlist.
-   * @param  {Playlist} playlist The playlist that was acted on
+   * @param {Playlist} playlist The playlist that was acted on
    */
   constructor(playlist, overrides) {
     if (!playlist) throw new Error('PlaylistEvent constructor requires a playlist parameter');

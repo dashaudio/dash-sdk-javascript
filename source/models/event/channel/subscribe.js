@@ -6,6 +6,18 @@ import { EventStatus } from '../status';
  * schema.org's [SubscribeAction](https://schema.org/SubscribeAction) *The act of forming a personal
  * connection with someone/something (object) unidirectionally/asymmetrically to get updates pushed
  * to*.
+ *
+ * @example // Create a basic event
+ * let event = new ChannelSubscribeEvent();
+ *
+ * @example // Override a parameter
+ * let event = new ChannelSubscribeEvent({ location: '40.748441,-73.985664' })
+ *
+ * @example // Save the event to our logging backend
+ * let event = new ChannelSubscribeEvent();
+ * let store = new LogStore();
+ * store.save(event.build()).then(() => { ... });
+ *
  * @todo Find a schema.org representation to use for the channel
  */
 export class ChannelSubscribeEvent extends Event {

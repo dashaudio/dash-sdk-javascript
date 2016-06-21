@@ -4,6 +4,17 @@ import { EventStatus } from '../status';
 /**
  * Link View denotes that a web link was viewed by a user. Uses schema.org's
  * [ViewAction](https://schema.org/ViewAction) *The act of consuming static visual content*.
+ *
+ * @example // Create a basic event
+ * let event = new LinkViewEvent();
+ *
+ * @example // Override a parameter
+ * let event = new LinkViewEvent({ location: '40.748441,-73.985664' })
+ *
+ * @example // Save the event to our logging backend
+ * let event = new LinkViewEvent();
+ * let store = new LogStore();
+ * store.save(event.build()).then(() => { ... });
  */
 export class LinkViewEvent extends Event {
   /**
