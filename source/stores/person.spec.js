@@ -14,11 +14,24 @@ describe('Person Store', () => {
   /**
    * @test {PersonStore#fetch}
    */
-  it('should fetch a person by ID', () => {
+  xit('should fetch a person by token', () => {
+    let token = '...';
     let store = new PersonStore();
 
-    return store.fetch(null).should.eventually.satisfy((person) => {
+    return store.fetchByToken(token).should.eventually.satisfy((person) => {
+      console.log(person);
       return person.should.be.an.instanceof(Person);
+    });
+  });
+
+  xit('should link tokens', () => {
+    let token1 = '...';
+    let token2 = '...';
+    let store = new PersonStore();
+
+    return store.linkTokens(token1, token2).should.eventually.satisfy((res) => {
+      console.log(res);
+      return res.should.not.be.undefined;
     });
   });
 });

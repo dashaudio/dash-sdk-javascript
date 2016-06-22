@@ -6,6 +6,8 @@ import { Application } from '../application';
  * Base class for all analytic events. Our events model user actions within client apps, and are
  * based on enteties described by [schema.org](https://schema.org).
  *
+ * @abstract
+ *
  * @example // Create a basic event
  * let event = new AppOpenEvent();
  *
@@ -16,9 +18,6 @@ import { Application } from '../application';
  * let event = new AppOpenEvent();
  * let store = new LogStore();
  * store.save(event.build()).then(() => { ... });
- *
- * @abstract
- * @todo Factor out some stuff here into utils, eg. to work out what app we are running as
  */
 export class Event {
   /**

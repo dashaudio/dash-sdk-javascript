@@ -8,6 +8,7 @@ export class Person {
    */
   constructor(params = {}) {
     this.id = params.id || null;
+    this.email = params.email || null;
     this.alternateName = params.alternateName || null;
 
     this['@type'] = 'Person';
