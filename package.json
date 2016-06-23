@@ -1,6 +1,6 @@
 {
   "name": "dash-sdk",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Dash's JavaScript SDK",
   "main": "build/node/dash.js",
   "browser": "build/browser/dash.js",
