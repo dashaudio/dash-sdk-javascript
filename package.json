@@ -8,7 +8,7 @@
     "start": "gulp watch",
     "build": "gulp build",
     "docs": "esdoc -c esdoc.json",
-    "coverage": "istanbul cover _mocha && codeclimate-test-reporter < build/coverage/lcov.info"
+    "coverage": "istanbul cover _mocha -- source/**/*.spec.js && codeclimate-test-reporter < build/coverage/lcov.info"
   },
   "repository": {
     "type": "git",
