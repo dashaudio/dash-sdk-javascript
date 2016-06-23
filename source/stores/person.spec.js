@@ -11,15 +11,21 @@ chai.use(promised);
  * @test {PersonStore}
  */
 describe('Person Store', () => {
+  xit('should fetch all users', () => {
+    let store = new PersonStore({ token: '' });
+    return store.fetchAll().should.eventually.satisfy((persons) => {
+      return persons[0].should.be.an.instanceof(Person);
+    });
+  });
+
   /**
    * @test {PersonStore#fetch}
    */
   xit('should fetch a person by token', () => {
-    let token = '...';
+    let token = '';
     let store = new PersonStore();
 
     return store.fetchByToken(token).should.eventually.satisfy((person) => {
-      console.log(person);
       return person.should.be.an.instanceof(Person);
     });
   });
@@ -30,7 +36,6 @@ describe('Person Store', () => {
     let store = new PersonStore();
 
     return store.linkTokens(token1, token2).should.eventually.satisfy((res) => {
-      console.log(res);
       return res.should.not.be.undefined;
     });
   });

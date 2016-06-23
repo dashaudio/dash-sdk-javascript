@@ -1,6 +1,8 @@
 import chai from 'chai';
 import promised from 'chai-as-promised';
+
 import { Person } from './person';
+import { Identity } from './identity';
 
 chai.should();
 
@@ -58,5 +60,41 @@ describe('Person', () => {
   it('should return the current user', () => {
     let person = Person.current();
     person.should.be.an.instanceof(Person);
+  });
+
+  /**
+   * @test {Person.hasSoundCloudIdentity}
+   */
+  it('should report a SoundCloud user has a SoundCloud identity', () => {
+    let identity = new Identity({ provider: 'soundcloud' });
+    let person = new Person({ identities: [identity] });
+
+    person.hasSoundCloudIdentity.should.be.true;
+  });
+
+  /**
+   * @test {Person.hasSoundCloudIdentity}
+   */
+  it('should report a non-SoundCloud user does not have a SoundCloud identity', () => {
+    let person = new Person();
+    person.hasSoundCloudIdentity.should.not.be.true;
+  });
+
+  /**
+   * @test {Person.hasSoundCloudIdentity}
+   */
+  it('should report a Google user has a Google identity', () => {
+    let identity = new Identity({ provider: 'google-oauth2' });
+    let person = new Person({ identities: [identity] });
+
+    person.hasGoogleIdentity.should.be.true;
+  });
+
+  /**
+   * @test {Person.hasSoundCloudIdentity}
+   */
+  it('should report a non-Google user does not have a Google identity', () => {
+    let person = new Person();
+    person.hasGoogleIdentity.should.not.be.true;
   });
 });

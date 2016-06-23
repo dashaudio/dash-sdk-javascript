@@ -1,15 +1,21 @@
+import { Identity } from './identity';
+
 /**
 * Person model. Based on schema.org's [Person](https://schema.org/Person).
 */
 export class Person {
   /**
    * Create a new person with the given parameters
-   * @param  {Object} params
+   * @param  {Object} [params]
    */
   constructor(params = {}) {
     this.id = params.id || null;
     this.email = params.email || null;
     this.alternateName = params.alternateName || null;
+
+    this.identities = params.identities ? params.identities.map((i) => {
+      return new Identity({ id: i.user_id, provider: i.provider });
+    }) : [];
 
     this['@type'] = 'Person';
     this['@context'] = 'https://schema.org';
@@ -25,5 +31,21 @@ export class Person {
     return new Person({
       // ...
     });
+  }
+
+  /**
+   * Report whether a person has a SoundCloud identity attached.
+   * @return {Boolean} True if the user has a SoundCloud identity
+   */
+  get hasSoundCloudIdentity() {
+    return this.identities.some((i) => i.provider && i.provider.match(/soundcloud/));
+  }
+
+  /**
+   * Report whether a person has a Google identity attached.
+   * @return {Boolean} True if the user has a Google identity
+   */
+  get hasGoogleIdentity() {
+    return this.identities.some((i) => i.provider && i.provider.match(/google/));
   }
 }
