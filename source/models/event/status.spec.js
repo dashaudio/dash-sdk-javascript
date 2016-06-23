@@ -1,5 +1,5 @@
 import chai from 'chai';
-import EventStatus from './status';
+import { EventStatus } from './status';
 
 describe('EventStatus', () => {
   /**

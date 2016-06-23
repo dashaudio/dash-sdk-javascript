@@ -1,5 +1,5 @@
 import chai from 'chai';
-import PlaylistCreateEvent from './create';
+import { PlaylistCreateEvent } from './create';
 
 /**
  * @test {PlaylistCreateEvent}

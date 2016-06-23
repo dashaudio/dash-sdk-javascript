@@ -1,5 +1,5 @@
-import TrackEvent from './track';
-import EventStatus from '../status';
+import { TrackEvent } from './track';
+import { EventStatus } from '../status';
 
 /**
  * Track Download denotes that a track was downloaded to a client app by a user. Uses schema.org's
@@ -18,7 +18,7 @@ import EventStatus from '../status';
  *
  * @todo Include error state information option
  */
-export default class TrackDownloadEvent extends TrackEvent {
+export class TrackDownloadEvent extends TrackEvent {
   /**
    * Build a dictionary for this event.
    * @return {Object} The dictionary

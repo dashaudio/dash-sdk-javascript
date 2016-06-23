@@ -1,5 +1,5 @@
-import PlaylistEvent from './playlist';
-import EventStatus from '../status';
+import { PlaylistEvent } from './playlist';
+import { EventStatus } from '../status';
 
 /**
  * Playlist Create denotes that a user created a new playlist. Uses schema.org's
@@ -19,7 +19,7 @@ import EventStatus from '../status';
  *
  * @see {@link PlaylistDeleteEvent}
  */
-export default class PlaylistCreateEvent extends PlaylistEvent {
+export class PlaylistCreateEvent extends PlaylistEvent {
   /**
    * Build a dictionary for this event.
    * @return {Object} The dictionary

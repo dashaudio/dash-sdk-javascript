@@ -1,6 +1,6 @@
-import EventStatus from './status';
-import Person from '../person';
-import Application from '../application';
+import { EventStatus } from './status';
+import { Person } from '../person';
+import { Application } from '../application';
 
 /**
  * Base class for all analytic events. Our events model user actions within client apps, and are
@@ -19,7 +19,7 @@ import Application from '../application';
  * let store = new LogStore();
  * store.save(event.build()).then(() => { ... });
  */
-export default class Event {
+export class Event {
   /**
    * Create a new event, with the specified parameter overrides
    * @param {Object} [overrides] Optional override parameters object

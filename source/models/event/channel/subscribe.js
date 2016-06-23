@@ -1,5 +1,5 @@
-import Event from '../event';
-import EventStatus from '../status';
+import { Event } from '../event';
+import { EventStatus } from '../status';
 
 /**
  * Channel Subscribe denotes that a user subscribed to notifications for a channel. Uses
@@ -20,7 +20,7 @@ import EventStatus from '../status';
  *
  * @todo Find a schema.org representation to use for the channel
  */
-export default class ChannelSubscribeEvent extends Event {
+export class ChannelSubscribeEvent extends Event {
   /**
    * Create a new Channel Subscribe event for a given channel
    * @param  {Channel} channel The channel being acted on

@@ -1,5 +1,5 @@
 import chai from 'chai';
-import AppOpenEvent from './open';
+import { AppOpenEvent } from './open';
 
 /**
  * @test {AppOpenEvent}

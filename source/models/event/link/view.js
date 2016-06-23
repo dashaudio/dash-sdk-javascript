@@ -1,5 +1,5 @@
-import Event from '../event';
-import EventStatus from '../status';
+import { Event } from '../event';
+import { EventStatus } from '../status';
 
 /**
  * Link View denotes that a web link was viewed by a user. Uses schema.org's
@@ -16,7 +16,7 @@ import EventStatus from '../status';
  * let store = new LogStore();
  * store.save(event.build()).then(() => { ... });
  */
-export default class LinkViewEvent extends Event {
+export class LinkViewEvent extends Event {
   /**
    * Create a new Link View event for a given URL
    * @param  {String} url The content's URL

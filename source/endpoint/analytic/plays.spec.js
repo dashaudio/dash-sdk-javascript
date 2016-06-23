@@ -1,6 +1,7 @@
 import chai from 'chai';
-import PlaysAnalyticEndpoint from './plays';
 import moment from 'moment';
+
+import { PlaysAnalyticEndpoint } from './plays';
 
 /**
  * @test {PlaysAnalyticEndpoint}

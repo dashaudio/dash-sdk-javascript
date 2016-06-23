@@ -1,6 +1,6 @@
-import Event from '../event';
-import EventStatus from '../status';
-import Person from '../../person';
+import { Event } from '../event';
+import { EventStatus } from '../status';
+import { Person } from '../../person';
 
 /**
  * App Open denotes that a client app was opened by a user. Uses schema.org's
@@ -20,7 +20,7 @@ import Person from '../../person';
  *
  * @see {@link AppCloseEvent}
  */
-export default class AppOpenEvent extends Event {
+export class AppOpenEvent extends Event {
   /**
    * Build a dictionary for this event.
    * @return {Object} The dictionary

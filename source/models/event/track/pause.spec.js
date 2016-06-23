@@ -1,5 +1,5 @@
 import chai from 'chai';
-import TrackPauseEvent from './pause';
+import { TrackPauseEvent } from './pause';
 
 /**
  * @test {TrackPauseEvent}

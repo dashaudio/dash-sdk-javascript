@@ -1,5 +1,4 @@
-import { TrackProgressEvent } from './progress';
-import EventStatus from '../status';
+import { EventStatus } from '../status';
 
 /**
  * Track Progress denotes that track playback progressed on a client. Uses schema.org's
@@ -7,6 +6,6 @@ import EventStatus from '../status';
  * which was formerly paused (e.g. resume music playback or resume a timer).*.
  * @todo
  */
-// export default class TrackProgressEvent extends TrackProgressEvent {
+// export class TrackProgressEvent extends TrackProgressEvent {
 //
 // }

@@ -1,6 +1,7 @@
 import chai from 'chai';
 import promised from 'chai-as-promised';
-import Application from './application';
+
+import { Application } from './application';
 
 chai.should();
 

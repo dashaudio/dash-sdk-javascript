@@ -1,11 +1,11 @@
-import Event from '../event';
-import EventStatus from '../status';
+import { Event } from '../event';
+import { EventStatus } from '../status';
 
 /**
  * Track event abstract base class.
  * @abstract
  */
-export default class TrackEvent extends Event {
+export class TrackEvent extends Event {
   /**
    * Create a new Track event, with the given track.
    * @param {Track} track The track that was acted on

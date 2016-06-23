@@ -1,5 +1,5 @@
 import chai from 'chai';
-import AppCloseEvent from './close';
+import { AppCloseEvent } from './close';
 
 /**
  * @test {AppCloseEvent}

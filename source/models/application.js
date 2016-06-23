@@ -2,7 +2,7 @@
  * Application model. Based on schema.org's
  * [SoftwareApplication](https://schema.org/PersoSoftwareApplication).
  */
-export default class Application {
+export class Application {
   /**
    * Create a new application with the given parameters
    * @param {Object} [params] Optional application parameters

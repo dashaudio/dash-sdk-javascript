@@ -2,8 +2,8 @@
   "name": "dash-sdk",
   "version": "0.0.3",
   "description": "Dash's JavaScript SDK",
-  "main": "build/node/dash.js",
-  "browser": "build/browser/dash.js",
+  "main": "build/dash.node.js",
+  "browser": "build/dash.browser.js",
   "jsnext:main": "source/dash.js",
   "scripts": {
     "test": "gulp test",

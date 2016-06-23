@@ -1,5 +1,5 @@
-import Event from '../event';
-import EventStatus from '../status';
+import { Event } from '../event';
+import { EventStatus } from '../status';
 
 /**
  * Playlist event abstract base class.
@@ -8,7 +8,7 @@ import EventStatus from '../status';
  * @see {@link PlaylistDeleteEvent}
  * @todo Add a full Playlist model object and use that here
  */
-export default class PlaylistEvent extends Event {
+export class PlaylistEvent extends Event {
   /**
    * Create a new Playlist event, with the given playlist.
    * @param {Playlist} playlist The playlist that was acted on

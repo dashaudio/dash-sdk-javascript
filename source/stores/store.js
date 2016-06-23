@@ -1,6 +1,6 @@
 import isofetch from 'isomorphic-fetch';
 
-export default class Store {
+export class Store {
   /**
    * @todo
    */

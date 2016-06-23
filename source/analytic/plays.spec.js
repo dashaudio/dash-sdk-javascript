@@ -1,7 +1,7 @@
 import chai from 'chai';
 import promised from 'chai-as-promised';
 import sinon from 'sinon';
-import PlaysAnalytic from './plays';
+import { PlaysAnalytic } from './plays';
 import fixtures from './plays.spec.fixtures';
 
 chai.should();

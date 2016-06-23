@@ -1,8 +1,8 @@
 import chai from 'chai';
 import promised from 'chai-as-promised';
 
-import PersonStore from './person';
-import Person from '../models/person';
+import { PersonStore } from './person';
+import { Person } from '../models/person';
 
 import fixtures from './person.spec.fixtures.json';
 

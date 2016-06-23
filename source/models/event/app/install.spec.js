@@ -1,5 +1,5 @@
 import chai from 'chai';
-import AppInstallEvent from './install';
+import { AppInstallEvent } from './install';
 
 /**
  * @test {AppInstallEvent}

@@ -1,5 +1,5 @@
 import chai from 'chai';
-import NotificationReceiveEvent from './receive';
+import { NotificationReceiveEvent } from './receive';
 
 /**
  * @test {NotificationReceiveEvent}

@@ -1,5 +1,5 @@
 import chai from 'chai';
-import TrackDownloadEvent from './download';
+import { TrackDownloadEvent } from './download';
 
 /**
  * @test {TrackDownloadEvent}

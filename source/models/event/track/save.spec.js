@@ -1,5 +1,5 @@
 import chai from 'chai';
-import TrackSaveEvent from './save';
+import { TrackSaveEvent } from './save';
 
 /**
  * @test {TrackSaveEvent}

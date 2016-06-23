@@ -1,5 +1,5 @@
 import chai from 'chai';
-import ChannelSubscribeEvent from './subscribe';
+import { ChannelSubscribeEvent } from './subscribe';
 
 /**
  * @test {ChannelSubscribeEvent}
