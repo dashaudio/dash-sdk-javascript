@@ -1,10 +1,10 @@
-import { Store } from './store';
+import Store from './store';
 import decode from 'jwt-decode';
 
 /**
  * Token Store
  */
-export class TokenStore extends Store {
+export default class TokenStore extends Store {
   /**
    * Link store's JWT token with the given JWT token
    * @param {String} token A JWT token from a secondary provider to be linked

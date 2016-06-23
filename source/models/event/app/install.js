@@ -1,5 +1,5 @@
-import { Event } from '../event';
-import { EventStatus } from '../status';
+import Event from '../event';
+import EventStatus from '../status';
 
 /**
  * App Install denotes that a client app was installed by a user. Uses schema.org's
@@ -18,7 +18,7 @@ import { EventStatus } from '../status';
  *
  * @see {@link AppBackgroundEvent}
  */
-export class AppInstallEvent extends Event {
+export default class AppInstallEvent extends Event {
   /**
    * Build a dictionary for this event.
    * @return {Object} The dictionary

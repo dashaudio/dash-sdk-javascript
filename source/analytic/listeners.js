@@ -1,3 +1,3 @@
-export class ListenersAnalytic {
+export default class ListenersAnalytic {
 
 }

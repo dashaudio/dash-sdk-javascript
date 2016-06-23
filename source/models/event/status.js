@@ -5,8 +5,10 @@
  * @property {String} Completed
  * @property {String} Failed
  */
-export const EventStatus = {
+const EventStatus = {
   Active: 'https://schema.org/ActiveActionStatus',
   Completed: 'https://schema.org/CompletedActionStatus',
   Failed: 'https://schema.org/FailedActionStatus'
 };
+
+export default EventStatus;

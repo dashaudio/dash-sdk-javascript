@@ -3,7 +3,7 @@
  * based on a schema.org definition, and should be reviewed to see if it can be.
  * @todo See if this model can be based on a schema.org definition
  */
-export class Identity {
+export default class Identity {
   /**
    * Create a new identity with the given parmeters
    * @param  {Object} [params]

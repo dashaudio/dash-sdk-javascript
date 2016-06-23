@@ -1,7 +1,7 @@
 import chai from 'chai';
 import promised from 'chai-as-promised';
 
-import { TokenStore } from './token';
+import TokenStore from './token';
 
 import fixtures from './token.spec.fixtures.json';
 

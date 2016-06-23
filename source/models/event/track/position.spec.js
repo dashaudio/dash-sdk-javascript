@@ -1,5 +1,5 @@
 import chai from 'chai';
-import { TrackPositionEvent } from './position';
+import TrackPositionEvent from './position';
 
 /**
  * @test {TrackPositionEvent}

@@ -2,7 +2,9 @@
   "name": "dash-sdk",
   "version": "0.0.1",
   "description": "Dash's JavaScript SDK",
-  "main": "index.js",
+  "main": "build/node/dash.js",
+  "browser": "build/browser/dash.js",
+  "jsnext:main": "source/dash.js",
   "scripts": {
     "test": "gulp test",
     "start": "gulp watch",
@@ -21,6 +23,8 @@
   },
   "homepage": "https://github.com/dashaudio/dash-sdk-javascript#readme",
   "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-es2015-rollup": "^1.1.1",
     "babel-register": "^6.9.0",

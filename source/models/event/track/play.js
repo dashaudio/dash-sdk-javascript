@@ -1,5 +1,5 @@
-import { TrackPositionEvent } from './position';
-import { EventStatus } from '../status';
+import TrackPositionEvent from './position';
+import EventStatus from '../status';
 
 /**
  * Track Play denotes that a track was played on a client app by a user. Uses schema.org's
@@ -17,7 +17,7 @@ import { EventStatus } from '../status';
  * let store = new LogStore();
  * store.save(event.build()).then(() => { ... });
  */
-export class TrackPlayEvent extends TrackPositionEvent {
+export default class TrackPlayEvent extends TrackPositionEvent {
   /**
    * Build a dictionary for this event.
    * @return {Object} The dictionary

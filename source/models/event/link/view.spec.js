@@ -1,5 +1,5 @@
 import chai from 'chai';
-import { LinkViewEvent } from './view';
+import LinkViewEvent from './view';
 
 /**
  * @test {LinkViewEvent}

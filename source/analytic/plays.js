@@ -1,4 +1,4 @@
-import { PlaysAnalyticEndpoint } from '../endpoint/analytic/plays';
+import PlaysAnalyticEndpoint from '../endpoint/analytic/plays';
 import isofetch from 'isomorphic-fetch';
 
 /**
@@ -7,7 +7,7 @@ import isofetch from 'isomorphic-fetch';
  * let plays = new dash.PlaysAnalytic();
  * plays.fetchAll((result) => console.log(result));
  */
-export class PlaysAnalytic {
+export default class PlaysAnalytic {
 
   /**
    * Create a new plays analytic

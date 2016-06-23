@@ -1,5 +1,5 @@
 import chai from 'chai';
-import { UserLogoutEvent } from './logout';
+import UserLogoutEvent from './logout';
 
 /**
  * @test {UserLogoutEvent}

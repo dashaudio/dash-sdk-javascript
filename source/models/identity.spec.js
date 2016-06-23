@@ -1,7 +1,7 @@
 import chai from 'chai';
 import promised from 'chai-as-promised';
 
-import { Identity } from './identity';
+import Identity from './identity';
 
 chai.should();
 

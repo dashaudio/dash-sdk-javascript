@@ -1,7 +1,7 @@
 import chai from 'chai';
 import promised from 'chai-as-promised';
 
-import { Store } from './store';
+import Store from './store';
 
 chai.should();
 chai.use(promised);

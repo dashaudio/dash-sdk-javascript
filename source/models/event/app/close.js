@@ -1,5 +1,5 @@
-import { Event } from '../event';
-import { EventStatus } from '../status';
+import Event from '../event';
+import EventStatus from '../status';
 
 /**
  * App Close denotes that a client was closed by its user. Uses schema.org's
@@ -19,7 +19,7 @@ import { EventStatus } from '../status';
  *
  * @see {@link AppOpenEvent}
  */
-export class AppCloseEvent extends Event {
+export default class AppCloseEvent extends Event {
   /**
    * Build a dictionary for this event.
    * @return {Object} The dictionary

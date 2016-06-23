@@ -1,9 +1,9 @@
-import { Identity } from './identity';
+import Identity from './identity';
 
 /**
 * Person model. Based on schema.org's [Person](https://schema.org/Person).
 */
-export class Person {
+export default class Person {
   /**
    * Create a new person with the given parameters
    * @param  {Object} [params]

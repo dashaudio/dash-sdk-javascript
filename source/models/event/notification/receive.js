@@ -1,5 +1,5 @@
-import { Event } from '../event';
-import { EventStatus } from '../status';
+import Event from '../event';
+import EventStatus from '../status';
 
 /**
  * Notification Receive denotes that a user received a notification. Uses schema.org's
@@ -18,7 +18,7 @@ import { EventStatus } from '../status';
  * let store = new LogStore();
  * store.save(event.build()).then(() => { ... });
  */
-export class NotificationReceiveEvent extends Event {
+export default class NotificationReceiveEvent extends Event {
   /**
    * Create a new Notification Receive event for a given notification
    * @param  {Notification} notification The notification being acted on

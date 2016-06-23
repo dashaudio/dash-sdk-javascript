@@ -7,7 +7,7 @@ import config from '../../config.json';
  * let endpoint = new PlaysAnalyticEndpoint();
  * let url = endpoint.retrieve(new Date() - 86400000, new Date(), 'client');
  */
-export class PlaysAnalyticEndpoint {
+export default class PlaysAnalyticEndpoint {
   /**
    * Create a new plays analytic endpoint
    * @param  {String} [domain] Override domain

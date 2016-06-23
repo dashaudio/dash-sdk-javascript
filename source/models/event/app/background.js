@@ -1,5 +1,5 @@
-import { Event } from '../event';
-import { EventStatus } from '../status';
+import Event from '../event';
+import EventStatus from '../status';
 
 /**
  * App Background denotes that a client app moved into the background. Uses schema.org's
@@ -19,7 +19,7 @@ import { EventStatus } from '../status';
  *
  * @see {@link AppForegroundEvent}
  */
-export class AppBackgroundEvent extends Event {
+export default class AppBackgroundEvent extends Event {
   /**
    * Build a dictionary for this event.
    * @return {Object} The dictionary

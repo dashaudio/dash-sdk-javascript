@@ -1,5 +1,5 @@
-import { Store } from './store';
-import { Person } from '../models/person';
+import Store from './store';
+import Person from '../models/person';
 
 import decode from 'jwt-decode';
 
@@ -7,7 +7,7 @@ import decode from 'jwt-decode';
  * Person Store
  * @todo A lot more validation and error handling needed here!
  */
-export class PersonStore extends Store {
+export default class PersonStore extends Store {
   /**
    * Fetch all users
    * @return {Promise<Person[]>} Array of Person objects

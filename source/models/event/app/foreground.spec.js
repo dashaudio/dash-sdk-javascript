@@ -1,5 +1,5 @@
 import chai from 'chai';
-import { AppForegroundEvent } from './foreground';
+import AppForegroundEvent from './foreground';
 
 /**
  * @test {AppForegroundEvent}

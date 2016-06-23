@@ -1,5 +1,5 @@
 import chai from 'chai';
-import { UserRegisterEvent } from './register';
+import UserRegisterEvent from './register';
 
 /**
  * @test {UserRegisterEvent}

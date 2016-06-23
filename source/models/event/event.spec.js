@@ -1,8 +1,8 @@
 import chai from 'chai';
-import { Event } from './event';
-import { EventStatus } from './status';
-import { Person } from '../person';
-import { Application } from '../application';
+import Event from './event';
+import EventStatus from './status';
+import Person from '../person';
+import Application from '../application';
 
 describe('Event', () => {
   /**

@@ -1,5 +1,5 @@
-import { Event } from '../event';
-import { EventStatus } from '../status';
+import Event from '../event';
+import EventStatus from '../status';
 
 /**
  * User Register denotes that a user has registered with us. Uses schema.org's
@@ -19,7 +19,7 @@ import { EventStatus } from '../status';
  *
  * @see {@link UserUnregisterEvent}
  */
-export class UserRegisterEvent extends Event {
+export default class UserRegisterEvent extends Event {
   /**
    * Build a dictionary for this event.
    * @return {Object} The dictionary

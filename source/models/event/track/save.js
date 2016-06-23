@@ -1,5 +1,5 @@
-import { TrackEvent } from './track';
-import { EventStatus } from '../status';
+import TrackEvent from './track';
+import EventStatus from '../status';
 
 /**
  * Track Remove denotes that a track was added to a playlist by a user. Uses schema.org's
@@ -17,7 +17,7 @@ import { EventStatus } from '../status';
  * let store = new LogStore();
  * store.save(event.build()).then(() => { ... });
  */
-export class TrackSaveEvent extends TrackEvent {
+export default class TrackSaveEvent extends TrackEvent {
   /**
    * Build a dictionary for this event.
    * @return {Object} The dictionary

@@ -1,5 +1,5 @@
-import { Event } from '../event';
-import { EventStatus } from '../status';
+import Event from '../event';
+import EventStatus from '../status';
 
 /**
  * User Unregister denotes that a user has registered with us.
@@ -18,6 +18,6 @@ import { EventStatus } from '../status';
  *
  * @see {@link UserRegisterEvent}
  */
-export class UserUnregisterEvent extends Event {
+export default class UserUnregisterEvent extends Event {
 
 }

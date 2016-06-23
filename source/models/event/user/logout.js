@@ -1,5 +1,5 @@
-import { Event } from '../event';
-import { EventStatus } from '../status';
+import Event from '../event';
+import EventStatus from '../status';
 
 /**
  * User Logout denotes that a user has logged out.
@@ -18,6 +18,6 @@ import { EventStatus } from '../status';
  * @see {@link UserLoginEvent}
  * @todo Find an appropriate schema.org representation for this event
  */
-export class UserLogoutEvent extends Event {
+export default class UserLogoutEvent extends Event {
 
 }
