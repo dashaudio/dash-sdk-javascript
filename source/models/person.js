@@ -25,7 +25,8 @@ export class Person {
   /**
    * Return the current user, if known
    * @return {Person} The current user of the system
-   * @todo: Cache and be able to fetch current user
+   * @todo Cache and be able to fetch current user
+   * @todo Move this out to a service; model shouldn't know how to save/fetch itself!
    */
   static current() {
     return new Person({

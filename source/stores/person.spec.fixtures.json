@@ -1,0 +1,15 @@
+{
+  "users": {
+    "client": {
+      "id": "12345",
+      "name": "Jane Doe",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NSIsIm5hbWUiOiJKYW5lIERvZSJ9.pzw4-H3BKZDXSe5a42CxYUJn2de4xXOJ93MBFPG-v6o"
+    },
+    "api": {
+      "id": "1234567890",
+      "name": "API User",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkFQSSBVc2VyIn0.LjSLWqgSaf0Erw-2CdmDKDVWqThk8rvjAeCRyHkD-XU"
+    }
+  },
+  "secret": "secret"
+}
