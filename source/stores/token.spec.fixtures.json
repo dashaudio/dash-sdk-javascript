@@ -1,0 +1,14 @@
+{
+  "accounts": {
+    "primary": {
+      "id": "123",
+      "name": "Jane Doe (Main Account)",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjMiLCJuYW1lIjoiSmFuZSBEb2UgKE1haW4gQWNjb3VudCkifQ.yxSbuclVExwxcPsmWPvsNBAVnucLmtuhZ1RIl9CxMNE"
+    },
+    "secondary": {
+      "id": "456",
+      "name": "Jane Doe (Secondary Account)",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0NTYiLCJuYW1lIjoiSmFuZSBEb2UgKFNlY29uZGFyeSBBY2NvdW50KSJ9.SYClTS0aOAg9Dya6EYbHZ4HvwYCgNq0U6-10m0tB8y4"
+    }
+  }
+}

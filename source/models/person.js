@@ -14,7 +14,7 @@ export class Person {
     this.alternateName = params.alternateName || null;
 
     this.identities = params.identities ? params.identities.map((i) => {
-      return new Identity({ id: i.user_id, provider: i.provider });
+      return new Identity({ id: i.user_id, provider: i.provider, token: i.access_token });
     }) : [];
 
     this['@type'] = 'Person';

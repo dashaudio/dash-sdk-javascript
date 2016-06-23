@@ -6,28 +6,20 @@ import decode from 'jwt-decode';
  */
 export class TokenStore extends Store {
   /**
-   * Link current identity with the given identity
-   * @param {String} [primary] A JWT token; if not provided the store's token is used
-   * @param {String} secondary A JWT token
-   * @todo What to return here?
-   * @todo Move out to a separate TokenStore?
+   * Link store's JWT token with the given JWT token
+   * @param {String} token A JWT token from a secondary provider to be linked
+   * @return {Promise<Object>}
    */
-  linkTokens(primary, secondary) {
-    primary = primary || this.token;
-    let id = decode(primary).sub;
-
+  linkToken(token) {
+    let id = decode(this.token).sub;
     let url = `https://dash.eu.auth0.com/api/v2/users/${id}/identities`;
-    let headers = {
-      'Authorization': `Bearer ${primary}`,
-      'Content-Type': 'application/json'
+
+    let request = {
+      method: 'POST', body: JSON.stringify({ link_with: token }), headers: this.headers()
     };
-    let body = {
-      link_with: secondary
-    };
-    let config = {
-      method: 'POST', body: JSON.stringify(body), headers
-    };
-    return this.fetch(url, config)
-      .then((r) => r.json());
+
+    return this.fetch(url, request)
+      .then(this.validateResponse)
+      .then(this.parseResponse);
   }
 }

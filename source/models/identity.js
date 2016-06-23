@@ -11,5 +11,6 @@ export class Identity {
   constructor(params = {}) {
     this.id = params.id || '';
     this.provider = params.provider || '';
+    this.token = params.token || '';
   }
 }

@@ -3,21 +3,27 @@ import promised from 'chai-as-promised';
 
 import { TokenStore } from './token';
 
+import fixtures from './token.spec.fixtures.json';
+
 chai.should();
 chai.use(promised);
 
 describe('Token Store', () => {
   /**
-   * @test {TokenStore#link}
+   * @test {TokenStore}
+   */
+  it('should exist', () => {
+    TokenStore.should.not.be.undefined;
+  });
+
+  /**
+   * @test {TokenStore#linkToken}
    */
   xit('should link tokens', () => {
-    let primary = '...';
-    let secondary = '...';
-    let store = new TokenStore();
+    let primary = fixtures.accounts.primary.token;
+    let secondary = fixtures.accounts.secondary.token;
+    let store = new TokenStore({ token: primary });
 
-    return store.linkTokens(primary, secondary).should.eventually.satisfy((result) => {
-      console.log(result);
-      return res.should.not.be.undefined;
-    });
+    return store.linkToken(secondary).should.eventually.be.fulfilled;
   });
 });
