@@ -5,6 +5,7 @@ import { PlaysAnalyticEndpoint } from './plays';
 
 /**
  * @test {PlaysAnalyticEndpoint}
+ * @ignore
  */
 describe('Plays Analytic Endpoint', () => {
   it('should exist', () => {

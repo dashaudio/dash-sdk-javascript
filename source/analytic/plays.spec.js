@@ -8,8 +8,9 @@ chai.should();
 chai.use(promised);
 
 /**
-* @test {PlaysAnalytic}
-*/
+ * @ignore
+ * @test {PlaysAnalytic}
+ */
 describe('Plays Analytic', () => {
   let fetch;
   let json = JSON.stringify(fixtures.default);

@@ -3,6 +3,7 @@ import { merge } from './utils';
 
 /**
  * @test {merge}
+ * @ignore
  */
 describe('Merge', () => {
   it('should merge several parameters into a valid URL querystring', () => {

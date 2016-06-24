@@ -3,6 +3,7 @@ import config from '../../config.json';
 
 /**
  * Plays analytics endpoint
+ * @ignore
  * @example
  * let endpoint = new PlaysAnalyticEndpoint();
  * let url = endpoint.retrieve(new Date() - 86400000, new Date(), 'client');

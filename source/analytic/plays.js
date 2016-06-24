@@ -3,12 +3,12 @@ import isofetch from 'isomorphic-fetch';
 
 /**
  * Class for plays
+ * @ignore
  * @example
  * let plays = new dash.PlaysAnalytic();
  * plays.fetchAll((result) => console.log(result));
  */
 export class PlaysAnalytic {
-
   /**
    * Create a new plays analytic
    * @param {Function} [fetch] Override fetch
