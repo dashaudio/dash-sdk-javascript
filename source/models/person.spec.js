@@ -73,6 +73,16 @@ describe('Person', () => {
   });
 
   /**
+   * @test {Person.soundCloudIdentity}
+   */
+  it('should return a SoundCloud if present', () => {
+    let identity = new Identity({ provider: 'soundcloud' });
+    let person = new Person({ identities: [identity] });
+
+    person.soundCloudIdentity.should.deep.equal(identity);
+  });
+
+  /**
    * @test {Person.hasSoundCloudIdentity}
    */
   it('should report a non-SoundCloud user does not have a SoundCloud identity', () => {
@@ -88,6 +98,16 @@ describe('Person', () => {
     let person = new Person({ identities: [identity] });
 
     person.hasGoogleIdentity.should.be.true;
+  });
+
+  /**
+   * @test {Person.googleIdentity}
+   */
+  it('should return a Google if present', () => {
+    let identity = new Identity({ provider: 'google-oauth2' });
+    let person = new Person({ identities: [identity] });
+
+    person.googleIdentity.should.deep.equal(identity);
   });
 
   /**

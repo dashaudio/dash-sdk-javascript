@@ -7,6 +7,19 @@
 
 # Quick Start
 
+The Dash SDK works in Node and in the browser. Install it using NPM:
+
+    // Install the SDK
+    npm install --save dash-sdk
+
+    // Use the SDK in Node
+    var Person = require('dash-sdk').Person;
+    var me = new Person({ email: my@email.com });
+
+    // Use the SDK in the browser
+    var Person = Dash.Person;
+    var me = new Person({ email: my@email.com });
+
 ## Analytics
 
 The Dash SDK provides a mechanism for reporting user events to our analytics system. Other parts
@@ -30,7 +43,24 @@ for more events.
 
 ## Users
 
-TODO
+Basic service for retrieving users is provided, using a JWT API token:
+
+    const TOKEN = '...';
+    const ID = '...';
+
+    // Create a person store
+    let store = new PersonStore({ token: TOKEN });
+
+    // Fetch all people
+    store.fetchAll().then(people => {
+      console.log(`${people.length} people found!`)
+    });
+
+    // Fetch and use a single person
+    store.fetchById(ID).then(person => {
+      let key = person.soundCloudIdentity.token;
+      if (key) console.log(`${person.email} has a SoundCloud account with token: ${key}`);
+    });
 
 ## Tracks
 

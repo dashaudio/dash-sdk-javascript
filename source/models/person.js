@@ -39,7 +39,16 @@ export class Person {
    * @return {Boolean} True if the user has a SoundCloud identity
    */
   get hasSoundCloudIdentity() {
-    return this.identities.some((i) => i.provider && i.provider.match(/soundcloud/));
+    return this.identities.some(i => i.provider && i.provider.match(/soundcloud/));
+  }
+
+  /**
+   * Return the person's SoundCloud identity, or null
+   * @return {Identity}
+   */
+  get soundCloudIdentity() {
+    let results = this.identities.filter(i => i.provider && i.provider.match(/soundcloud/));
+    return results.length ? results[0] : null;
   }
 
   /**
@@ -47,6 +56,15 @@ export class Person {
    * @return {Boolean} True if the user has a Google identity
    */
   get hasGoogleIdentity() {
-    return this.identities.some((i) => i.provider && i.provider.match(/google/));
+    return this.identities.some(i => i.provider && i.provider.match(/google/));
+  }
+
+  /**
+   * Return the person's Google identity, or null
+   * @return {Identity}
+   */
+  get googleIdentity() {
+    let results = this.identities.filter(i => i.provider && i.provider.match(/google/));
+    return results.length ? results[0] : null;
   }
 }
