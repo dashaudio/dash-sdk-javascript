@@ -38,7 +38,6 @@ gulp.task('source:browser', () => {
         json(),
         babel({
           presets: ['es2015-rollup'],
-
           babelrc: false
         }),
         resolve({
@@ -51,6 +50,27 @@ gulp.task('source:browser', () => {
     .pipe(gulp.dest('build'));
 });
 
+gulp.task('source:next', () => {
+  return gulp.src(ROOT)
+    .pipe(rollup({
+      format: 'es6',
+      moduleName: NAME,
+      plugins: [
+        resolve({
+          browser: true
+        }),
+        commonjs(),
+        json(),
+        babel({
+          presets: ['es2015-rollup'],
+          babelrc: false
+        })
+      ]
+    }))
+    .pipe(rename({ suffix: '.next' }))
+    .pipe(gulp.dest('build'));
+});
+
 gulp.task('test', () => {
   return gulp.src('source/**/*.spec.js')
     .pipe(mocha());
@@ -60,5 +80,5 @@ gulp.task('watch', ['test'], () => {
   gulp.watch(['source/**/*'], ['test']);
 });
 
-gulp.task('build', ['source:node', 'source:browser'])
+gulp.task('build', ['source:node', 'source:browser', 'source:next'])
 gulp.task('default', ['build']);
