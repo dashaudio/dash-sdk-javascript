@@ -1,6 +1,8 @@
 var gulp = require('gulp');
 var rename = require('gulp-rename');
-var rollup = require('gulp-rollup');
+// var rollup = require('gulp-rollup');
+var rollup = require('rollup-stream');
+var source = require('vinyl-source-stream');
 var json = require('rollup-plugin-json');
 var babel = require('rollup-plugin-babel');
 var resolve = require('rollup-plugin-node-resolve');
@@ -14,9 +16,9 @@ var NAME = 'Dash';
 var ROOT = 'source/dash.js';
 
 gulp.task('source:node', () => {
-  return gulp.src(ROOT)
-   .pipe(rollup({
+  return rollup({
       format: 'cjs',
+      entry: ROOT,
       plugins: [
         json(),
         babel({
@@ -24,16 +26,16 @@ gulp.task('source:node', () => {
           babelrc: false
         })
       ]
-    }))
-    .pipe(rename({ suffix: '.node' }))
+    })
+    .pipe(source('dash.node.js'))
     .pipe(gulp.dest('build'));
 });
 
 gulp.task('source:browser', () => {
-  return gulp.src(ROOT)
-    .pipe(rollup({
+  return rollup({
       format: 'iife',
       moduleName: NAME,
+      entry: ROOT,
       plugins: [
         json(),
         babel({
@@ -45,16 +47,16 @@ gulp.task('source:browser', () => {
         }),
         commonjs()
       ]
-    }))
-    .pipe(rename({ suffix: '.browser' }))
+    })
+    .pipe(source('dash.browser.js'))
     .pipe(gulp.dest('build'));
 });
 
 gulp.task('source:next', () => {
-  return gulp.src(ROOT)
-    .pipe(rollup({
+  return rollup({
       format: 'es6',
       moduleName: NAME,
+      entry: ROOT,
       plugins: [
         resolve({
           browser: true
@@ -66,8 +68,8 @@ gulp.task('source:next', () => {
           babelrc: false
         })
       ]
-    }))
-    .pipe(rename({ suffix: '.next' }))
+    })
+    .pipe(source('dash.next.js'))
     .pipe(gulp.dest('build'));
 });
 
