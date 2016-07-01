@@ -20,6 +20,7 @@ export class TokenStore extends Store {
 
     return this.fetch(url, request)
       .then(this.validateResponse)
-      .then(this.parseResponse);
+      .then(this.parseResponse)
+      .catch(error => Promise.reject(new Error(`TokenStore failed to linkToken (${error})`)));
   }
 }
